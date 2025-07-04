@@ -34,34 +34,22 @@ void loop() {
   if(lightValue > 200 && !doorChanged){   
     fridgeFile = SD.open("test.txt", FILE_WRITE);
     doorState = "Open ";
-    String info = doorState + ", " + lightValue;
-    Serial.println(info);
-    writeToFile();
-//    if (fridgeFile) {
-//      fridgeFile.println(info);
-//      fridgeFile.close();
-//    }
+    String info = doorState + ", " + lightValue + ", ";
+    Serial.print(info);    
+    if (fridgeFile) {
+      fridgeFile.print(info);     
+    }
     doorChanged = true;
   }
-  else if(lightValue < 200 && doorChanged){
-    fridgeFile = SD.open("test.txt", FILE_WRITE);
+  else if(lightValue < 200 && doorChanged){    
     doorState = "Closed ";
     String info = doorState + ", " + lightValue;
-    Serial.println(info);
-    writeToFile();
-//    if (fridgeFile) {
-//      fridgeFile.println(info);
-//      fridgeFile.close();
-//    }
+    Serial.println(info);   
+   if (fridgeFile) {
+      fridgeFile.println(info);
+      fridgeFile.close();
+    }
     doorChanged = false;
   }
 }
 
-void writeToFile(){
-  if (fridgeFile) {
-      
-      String info = doorState + ", " + lightValue;
-      fridgeFile.println(info);
-      fridgeFile.close();
-    }
-}
