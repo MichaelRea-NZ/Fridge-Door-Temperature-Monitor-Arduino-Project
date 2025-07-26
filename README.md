@@ -20,8 +20,8 @@ Example:
 2025-07-24 17:45:12, 4.5, 2025-07-24 17:45:45, 5.3
 
 Video Walkthrough
-You can watch a full demonstration of the project here:
-YouTube Video
+You can watch a full demonstration of the project here: https://youtu.be/_0WO_zxzdPw
+
 Future Improvements
     • Add wireless communication (e.g., Wi-Fi or Bluetooth) to measure outside temperature when the door is open
     • Make a SQL database to analyse the data
